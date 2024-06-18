@@ -114,10 +114,15 @@ function M.off()
 	original_opts.relativenumber = nil
 
 	for k, v in pairs(original_opts) do
-		if k ~= "highlights" then
+        if k == "showtabline" then
+            o[k] = 1
+        elseif k == "cmdheight" then
+            o[k] = 1
+        elseif k ~= "highlights" then
 			o[k] = v
 		end
 	end
+
 
 	for hi_group, props in pairs(original_opts["highlights"]) do
 		colors.highlight(hi_group, { fg = props.foreground, bg = props.background }, true)
