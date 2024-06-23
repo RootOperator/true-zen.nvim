@@ -36,7 +36,8 @@ config.options = {
 				showcmd = false,
 				showmode = false,
 				ruler = false,
-				numberwidth = 1
+				numberwidth = 1,
+                foldcolumn = '0',
 			},
 			callbacks = { -- run functions when opening/closing Minimalist mode
 				open_pre = nil,
