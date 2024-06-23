@@ -91,12 +91,19 @@ function M.on()
 		require("true-zen.integrations.tmux").on()
 	end
 
+    --UFO.nvim
+    cmd("UfoDisable")
+
 	M.running = true
 	data.do_callback("minimalist", "open", "pos")
 end
 
 function M.off()
 	data.do_callback("minimalist", "close", "pre")
+
+    -- UFO.nvim
+    cmd("UfoEnable")
+
 
 	api.nvim_create_augroup("TrueZenMinimalist", {
 		clear = true,
